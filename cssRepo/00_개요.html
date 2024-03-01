@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>개요</title>
+    <style>
+        /*
+            .(className), #(id) >, :
+            선택자 우선 순위
+            important > 태그 안에 직접 스타일 적용(style="~~~") > id > class > 태그
+            우선순위가 낮은 애들부터 먼저 스타일 적용하기 
+        */
+        body {
+            margin: 0%;
+        }
+        h1 {
+            background-color: rgba(255, 0, 0, 0.441);
+        }
+
+        h2 {
+            background-color: rgba(0, 0, 255, 0.354);
+        }
+
+        h2 {
+            background-color: rgba(0, 128, 0, 0.404)
+        }
+        /*동일한 요소에 접근 시 마지막에 작성된 걸로 적용됨*/
+        .span {
+            background-color: rgba(0, 255, 255, 0.441);
+        }
+        #first, #third {
+            background-color: cornflowerblue;
+        }
+        
+        #second {
+            background-color: rgba(0, 255, 255, 0.521);
+        }
+        
+        div {
+            width: 40%;
+            height: 100px;
+            background-color: gray;
+        }
+
+        .box {
+            width: 30%;
+            height: 115px;
+            border: 3px dashed black;
+        }
+
+        .myColor {
+            background-color: aquamarine;
+            color: darksalmon;
+        }
+    </style>
+</head>
+<body>
+    <h1>개요</h1>
+    <h2><span class="span">css 매커니즘</span>: 특정 요소 선택 → 스타일 적용</h2>
+
+    <h1>하나</h1>
+    <h2>둘</h2>
+    <h3>셋</h3>
+
+    <div id="first">1</div>
+    <div id="second">2</div>
+    <div id="third">3</div>
+
+    <hr>
+
+    <div class="box myColor">1</div>
+    <div class="box">2</div>
+    <div class="box">3</div>
+</body>
+</html>

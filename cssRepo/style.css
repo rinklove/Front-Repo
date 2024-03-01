@@ -1,0 +1,10 @@
+html, body {
+    height: 100%;
+    width: 100%;
+  }
+  .ml-200{
+    margin-left: 200px;
+  }
+  .mr-200{
+    margin-right: 200px;
+  }

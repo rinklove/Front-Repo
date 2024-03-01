@@ -1,0 +1,28 @@
+pre {
+    font-size: 150%;
+}
+.box {
+    border: 3px solid black;
+    width: 20vw;
+    height: 20vh
+}
+
+#t01:hover {
+    /* 같은 속성을 쓸경우 
+    가장 마지막에 작성한(가장 아랫줄에 있는) 속성으로 적용 */
+    transform: translateX(20%) translateY(50%);
+    transform: scale(30%);
+    transform: rotate(30deg);
+    transform: skewX(30deg);
+    transform: skewX(30deg) rotate(-30deg);
+    /* x,y,z축 돌릴지 말지 결정하는 값은 
+    1(변형 적용) or 0(미적용) */
+    transform: rotate3d(0, 1, 0, 40deg) perspective(30%);
+
+    transform:  perspective(30%);
+
+    transform-origin: right top;
+    transform: rotateY(60deg);
+    backface-visibility: hidden;
+    
+}

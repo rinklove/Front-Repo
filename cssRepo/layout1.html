@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>반응형</title>
+    <style>
+        body {
+            margin: 0%;
+        }
+        table {
+            width: 80%;
+        }
+        table > thead  {
+            background-color: aquamarine;
+        }
+        table > tbody > tr > td {
+            text-align: center;
+        }
+        input[type=submit] {
+            width: 100%;
+        }
+        span, legend {
+            font-weight: 800;
+        }
+        table > tbody > tr > td:first-child {
+            background-color: rgba(255, 0, 0, 0.224);
+            width: 30%;
+        }
+        table > tbody > tr > td > input, table > tbody > tr > td > textarea {
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    
+    <form action="이준호">
+        <table>
+            <thead>
+                <tr>
+                    <th colspan="2"><h1>주문하기</h1></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>
+                        <span>고객명:</span>
+                    </td>
+                    <td>
+                        <input type="text">
+                    </td>
+                </tr>
+                <tr>
+                    <td><span>전화번호:</span></td>
+                    <td>
+                        <input type="tel">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <span>email:</span>
+                    </td>
+                    <td>
+                        <input type="email">
+                    </td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>
+                        <fieldset>
+                            <legend>피자 사이즈</legend>
+                            <input type="radio" name="size" id="small" value="small"><label for="small">small</label><br><br>
+                            <input type="radio" name="size" id="medium" value="medium"><label for="medium">Medium</label><br><br>
+                            <input type="radio" name="size" id="large" value="large"><label for="large">Large</label>
+                        </fieldset>
+                    </td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>
+                        <fieldset>
+                            <legend>토핑 선택</legend>
+                            <input type="checkbox" name="topping" value="베이컨">베이컨<br><br>
+                            <input type="checkbox" name="topping" value="치즈">치즈<br><br>
+                            <input type="checkbox" name="topping" value="양파">양파<br><br>
+                            <input type="checkbox" name="topping" value="버섯">버섯
+                        </fieldset>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div>
+            <table>
+                <thead>
+
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><span>희망 <br>배송시간</span></td>
+                        <td><input type="time" style="text-align: center; background-color: rgba(100, 148, 237, 0.24);"></td>
+                    </tr>
+                    <tr>
+                        <td><span>요청 시 <br>배송사항</span></td>
+                        <td><textarea name="" id="" cols="23" rows="10"></textarea></td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            <input type="submit" value="주문하기">
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </form>
+</body>
+</html>

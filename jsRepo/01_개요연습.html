@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        div {
+            width: 100px;
+            height: 100px;
+        }
+        #t01 {
+            background-color:gray;
+        }
+
+        div:nth-of-type(2) {
+            background-color: lightgray;
+        }
+        div:nth-of-type(4) {
+            background-color: red;
+        }
+        #rbox {
+            background-color: red;
+        }
+        #blue-box {
+            background-color: blue;
+        }
+        .abc {
+            border: 5px solid black;
+        }
+    </style>
+</head>
+<body>
+    <h1>여늡</h1>
+    <div id="t01">div</div>
+
+    <span>zzz</span>
+    <span>zzz</span>
+    <span>zzz</span>
+
+    <input type="text" name="" id="">
+
+    <script> 
+        class Thenable {
+            constructor(num) {
+                this.num = num;
+            }
+            then(resolve, reject) {
+                alert(resolve);
+                // 1000밀리초 후에 이행됨(result는 this.num*2)
+                setTimeout(() => resolve(this.num * 2), 1000); // (*)
+            }
+        };
+        
+        async function f() {
+            // 1초 후, 변수 result는 2가 됨
+            let result = await new Thenable(1);
+            alert(result);
+        }
+        
+        f(); //1
+        const x = document.querySelector("input[type=text]");
+        console.log(x); //2
+
+        </script>
+
+<hr>
+<hr>
+<hr>
+
+<div>2번</div>
+<hr>
+<div class="abc" id="box">박스</div>
+<div class="abc" id="rbox">빨간색 박스</div>
+<div class="abc" id="blue-box">파란색 박스</div>
+
+<script>
+    const rbox = document.getElementById("rbox");
+    console.log(rbox);
+    const box = document.getElementsByClassName("abc");
+    console.log(box);
+    </script>
+</body>
+</html>

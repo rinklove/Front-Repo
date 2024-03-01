@@ -1,0 +1,31 @@
+#wrap {
+    display: flex;
+    width: 50vw;
+    height: 50vh;
+    background-color: lightgray;
+    border: 5px dashed gray;
+
+    flex-wrap: wrap;
+    /* 중심축 기준 정렬 */
+    justify-content: space-evenly;
+    /* 교차축 기준 정렬 */
+    align-items: center;
+    /* 중심축 설정 */
+    flex-direction: column;
+
+    /*  */
+    align-content: center;
+}
+
+.box {
+    /* 기본값이 부모의 width/height값에 맞춰짐 */
+    width: 10vw;
+    height: 10vh;
+    border: 1px solid red;
+}
+
+.box:nth-child(2) {
+    background-color: blue;
+    align-self:  center;
+    order: 1;
+}

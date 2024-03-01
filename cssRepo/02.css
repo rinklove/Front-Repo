@@ -1,0 +1,143 @@
+body {
+    margin: 0%;
+}
+.box {
+    background-color: gray;
+    width: 30%;
+    height: 5em;
+    border: 1px solid black;
+}
+h1 {
+    background-color: red;
+}
+
+pre{
+    font-size: 120%;
+    font-weight: 600;
+}
+/*=======================================*/
+
+/*기본 속성 선택자*/
+
+/*일치하는*/
+div[name=kh] {
+    background-color: red;
+}
+/*포함하는(단어 자체가 kh와 일치해야함)*/
+div[name~=kh] {
+    background-color: blue;
+}
+
+/* 시작하는*/
+div[name^=k] {
+    background-color: green;
+}
+
+/*끝나는*/
+div[name$=h] {
+    background-color: gray;
+}
+
+/*포함하는(단어에 h가 있으면 됨)*/
+div[name*=h] {
+    background-color: brown;
+}
+/*=======================================*/
+
+/*자식 후손*/
+#test1 > h4 {
+    background-color: aquamarine;
+}
+
+#test1 > ul > h4 {
+    background-color: blanchedalmond;
+}
+
+div li {
+    background-color: chartreuse;
+}
+/*=======================================*/
+
+/*동위 선택자*/
+
+#test3 {
+    background-color: cornflowerblue;
+}
+
+#test3+div {
+    background-color: lavenderblush;
+}
+
+/* #test3~div {
+    background-color: turquoise;
+} */
+/*=======================================*/
+
+/*반응 선택자*/
+
+#test-active:active {
+background-color: crimson;
+}
+
+#test-hover:hover {
+background-color: tomato;
+}
+
+/*=======================================*/
+
+/*상태 선택자*/
+input[type=checkbox]:checked {
+    width: 30%;
+    height: 5em;
+}
+
+button:disabled {
+    border: 5px solid green;
+}
+/*=======================================*/
+
+/*일반 구조 선택자*/
+
+ #test6 > pre:last-child {
+    background-color: dodgerblue;
+ }
+
+ #test6 > p:nth-last-child(2) {
+    background-color: dodgerblue;
+ }
+ /*=======================================*/
+
+/*형태 구조 선택자*/
+
+#test7 > p:nth-last-of-type(3n) {
+    background-color: gray;
+}
+ /*=======================================*/
+
+/*문자 선택자*/
+
+#test8 {
+    background-color: lightgray;
+}
+
+#test8 > p::selection {
+    color: aliceblue;
+    font-size: 300%;
+}
+
+#test8 > p::before {
+    background-color: gold;
+    content: 'before';
+}
+
+#test8 > p::after {
+    background-color: gold;
+    content: 'after';
+}
+ /*=======================================*/
+
+/*부정 선택자*/
+
+#test9 p:not(:nth-child(2)) {
+    background-color: violet;
+}

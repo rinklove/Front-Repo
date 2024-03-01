@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        pre {
+            font-size: 150%;
+        }
+    </style>
+    <script src="https://cdn.ckeditor.com/ckeditor5/32.0.0/classic/ckeditor.js"></script>
+</head>
+<body>
+    <h1>데이터 입출력</h1>
+    <pre>
+        window.alert
+        window.confirm: 확인 버튼 누르면 true, 취소 누르면 false
+        window.prompt
+        document.write
+    </pre>
+    <button id="btn1">벝은</button>
+    <div id="new-div"></div>
+    <script>
+    // 알람 뜨고 나서 화면
+    // window.alert(`알람~!~!`);
+    // const x = confirm(`당신은 사람인가요?`);
+    // console.log(x);
+        // const name = prompt(`너의 이름은?`);
+        // console.log(`너의 이름은 ${name}이다.`)
+        const btn1 = document.getElementById("btn1");
+        const newDiv = document.getElementById("new-div");
+        btn1.addEventListener("click", () => {
+
+            newDiv.append("자동으로 추가된 글자")
+        });
+        
+    </script>
+    <hr>
+    <h3>요소 선택</h3>
+    <pre>
+        querySelector
+        getElementBy~
+    </pre>
+    <div class="box" id="target">div</div>
+    <script>
+        // let x = document.getElementById("target");
+        // x.style.backgroundColor
+
+        //요소 가져와서 내부의 글자를 변경해보기
+        let a = document.querySelector("#target");
+        a.innerHTML = '히히 <br>글자 바꿔치기';
+
+        //요소 가져와서 배경 변경(스타일 변경- 인라인 형식이기 때문에 비추천)
+        a.style.backgroundColor = 'red';
+    </script>
+
+    <br><br><br>
+    <hr>
+    <br><br><br>
+
+    <button id="btn" onclick="f()">버튼</button>
+    <div id="kh">
+        div
+    </div>
+
+    <script>
+        const f = () => {
+            const kh = document.querySelector("#kh");
+            kh.style.backgroundColor = "blue";
+
+        }
+    </script>
+</body>
+</html>

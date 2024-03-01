@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>선택자</title>
+   <link rel="stylesheet" href="02.css">
+</head>
+<body>
+    <h1>선택자</h1>
+
+    <h2>1. 기본 속성 선택자</h2>
+    <pre>
+        선택자[속성명=속성값] {
+            ...
+        }
+    </pre>
+    <div name="kh">div1</div>
+    <div name="hong">div2</div>
+    <div name="kim kh">div3</div>
+    <div name="kim">div4</div>
+     <hr>
+
+    <h2>2. 자식 선택자, 후손 선택자</h2>
+    <pre>
+        자식: 선택자: 바로 하위 요소(a > b)
+        후손: 하위 요소 전부(a b)
+    </pre>
+    <div id="test1">
+        <h4>div아래에이치4</h4>
+        <h4>div아래에이4</h4>
+        <ul>
+            <h4>ul아래에이치4</h4>
+            <li>div ul li</li>
+            <li>div ul li</li>
+        </ul>
+    </div>
+    <hr>
+
+    <h2>3. 동위 선택자</h2>
+    <pre>
+        동위 관계(같은 레벨)에서 뒤에 위치한 태그 선택
+        
+        a 선택자 뒤에 있는 b 요소 '한 개' 선택
+        a+b {
+            ...
+        }
+
+        a 선택자 뒤에 있는 b 요소 '모두' 선택
+        a~b {
+            ...
+        }
+    </pre>
+    <div id="test3">div1</div>
+    <div>div2</div>
+    <div>div3</div>
+    <span>div4</span>
+    <div>div5</div>
+    <hr>
+
+    <h2>4. 반응 선택자</h2>
+    <pre>
+        사용자의 움직임에 따라 선택
+        클릭하는 요소 선택:(선택자) {
+            ...
+        }
+        선택자 종류
+        active: 클릭하는 요소 선택
+        hover: 마우스 올려놓은 요소 선택
+    </pre>
+    <div id="test-active" class="box gray">active 테스트</div>
+    <div id="test-hover" class="box gray">hover 테스트</div>
+    <hr>
+
+    <h2>5. 상태 선택자</h2>
+    <pre>
+        입력 양식에 따라 선택(input)
+
+        1. 체크된 상태(선택자:checked)
+        2. 초점이 맞춰진 상태(선택자:focus)
+        3. 사용 가능한 상태(선택자:enabled)
+        4. 사용 불가능한 상태(선택자:disabled)
+    </pre>
+    <input type="checkbox">
+    <br>
+    <input type="text">
+    <br>
+    <button>버튼(사용가능)</button>
+    <br>
+    <button disabled>버튼(사용불가)</button>
+    <hr>
+
+    <h2>6. 일반 구조 선택자</h2>
+    <pre>
+        특정 위치에 있는 태그 선택(위치로 구분)
+
+        first-child
+        last-child
+        
+        nth-child(n)
+        nth-last-child(n)
+
+        nth-child(even)
+        nth-child(odd)
+    </pre>
+
+    <div id="test6">
+        <p>테스트1</p>
+        <p>테스트2</p>
+        <p>테스트3</p>
+        <p>테스트4</p>
+        <p>테스트5</p>
+        <pre>테스트6</pre>
+    </div>
+    <hr>
+
+    <h2>7. 형태 구조 선택자</h2>
+    <pre>
+        특정 위치에 있는 태그 선택(태그로 구분)
+
+        first-of-type
+        last-of-type
+        nth-of-type(n)
+        nth-last-of-type(n)
+    </pre>
+    <div id="test7">
+        <p>테스트1</p>
+        <p>테스트2</p>
+        <p>테스트3</p>
+        <p>테스트4</p>
+        <p>테스트5</p>
+        <pre>테스트6</pre>
+    </div>
+    <hr>
+
+    <h2>8. 문자 선택자</h2>
+    <pre>
+        태그 내부에서 특정 조건의 문자를 선택
+        <mark>콜론 2개(::) 붙여야함</mark>
+        first-letter
+        first-line
+        before☆☆
+        after☆☆
+        selection☆☆
+    </pre>
+    <div id="test8">
+        <p>
+            대통령으로 선거될 수 있는 자는 국회의원의 피선거권이 있고 선거일 현재 40세에 달하여야 한다. 법률이 헌법에 위반되는 여부가 재판의 전제가 된 경우에는 법원은 헌법재판소에 제청하여 그 심판에 의하여 재판한다. 형사피해자는 법률이 정하는 바에 의하여 당해 사건의 재판절차에서 진술할 수 있다.
+
+국회나 그 위원회의 요구가 있을 때에는 국무총리·국무위원 또는 정부위원은 출석·답변하여야 하며, 국무총리 또는 국무위원이 출석요구를 받은 때에는 국무위원 또는 정부위원으로 하여금 출석·답변하게 할 수 있다. 재판의 전심절차로서 행정심판을 할 수 있다. 행정심판의 절차는 법률로 정하되, 사법절차가 준용되어야 한다.
+
+국가는 모성의 보호를 위하여 노력하여야 한다. 연소자의 근로는 특별한 보호를 받는다. 재판의 심리와 판결은 공개한다. 다만, 심리는 국가의 안전보장 또는 안녕질서를 방해하거나 선량한 풍속을 해할 염려가 있을 때에는 법원의 결정으로 공개하지 아니할 수 있다. 정당의 설립은 자유이며, 복수정당제는 보장된다.
+
+국회의원의 수는 법률로 정하되, 200인 이상으로 한다. 대법원장은 국회의 동의를 얻어 대통령이 임명한다. 모든 국민은 인간으로서의 존엄과 가치를 가지며, 행복을 추구할 권리를 가진다. 국가는 개인이 가지는 불가침의 기본적 인권을 확인하고 이를 보장할 의무를 진다. 국무총리 또는 행정각부의 장은 소관사무에 관하여 법률이나 대통령령의 위임 또는 직권으로 총리령 또는 부령을 발할 수 있다.
+
+모든 국민은 자기의 행위가 아닌 친족의 행위로 인하여 불이익한 처우를 받지 아니한다. 국가는 여자의 복지와 권익의 향상을 위하여 노력하여야 한다. 국가는 농지에 관하여 경자유전의 원칙이 달성될 수 있도록 노력하여야 하며, 농지의 소작제도는 금지된다. 재의의 요구가 있을 때에는 국회는 재의에 붙이고, 재적의원과반수의 출석과 출석의원 3분의 2 이상의 찬성으로 전과 같은 의결을 하면 그 법률안은 법률로서 확정된다.
+        </p>
+    </div>
+    <hr>
+
+    <h2>9. 부정 선택자</h2>
+    <pre>
+        반대로 선택
+
+        :not(선택자)
+    </pre>
+    <div id="test9">
+        <p class="kh">테스트1</p>
+        <p>테스트2</p>
+        <p>테스트3</p>
+        <p class="kh">테스트4</p>
+        <p>테스트5</p>
+        <pre>테스트6</pre>
+    </div>
+</body>
+</html>

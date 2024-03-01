@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>실습</h1>
+    <hr>
+    <pre>
+        버튼 클릭하면
+        아래 div의 색상을 red로 변경하기
+    </pre>
+
+    <button id="btn1" onclick="red()">빨간색으로 변경하는 버튼</button>
+    <div id=div1>빨간색으로 바뀔 div</div>
+    <script>
+        const red = () => {
+            const div1 = document.querySelector("#div1");
+            div1.style.backgroundColor = 'red';
+        }
+    </script>
+
+<br><br><br>
+<hr>
+<br><br><br>
+
+
+<h2>2. 색상 조절하기</h2>
+<pre>
+    버튼 클릭하면, 
+    아래 div 의 색상을 유저한테 입력받은 값으로 로 변경하기
+    ex
+    유저가 red 라고 입력하면 red 로 변경
+    유저가 blue 라고 입력하면 blue 로 변경
+    
+</pre>
+
+<button id="btn01" onclick="change()">색 변경 버튼</button>
+<input type="color">
+<div id="div01">색 바뀔 DIV</div>
+
+<script>
+    
+    const change  = () => {
+        // let color = prompt(`바꿀 색상`);
+        const div01 = document.querySelector("#div01");
+        const changeColor = document.querySelector("input[type=color]");
+
+        div01.style.backgroundColor = changeColor.value;
+    } 
+
+</script>
+
+<br><br><br>
+<hr>
+<br><br><br>
+
+<input type="text" placeholder="이름을 입력하세요" name="" id="" onchange="f3()">
+
+<script>
+    const f3 = () => {
+        const input = document.querySelector("input[type=text]");
+        console.log(input.value);
+        console.log(input.placeholder);
+    }
+</script>
+
+<br><br><br>
+<hr>
+<br><br><br>
+
+<div id="box">얖</div>
+<input type="text" placeholder="너비(단위: px)" name="" id=""><br>
+<input type="text" placeholder="높이(단위: px)" name="" id=""><br>
+<input type="color" placeholder="색상" name="" id=""><br>
+<button onclick="apply()">적용</button>
+
+<script>
+    const apply = ()  => {
+        const text = document.querySelectorAll("input[type=text]")
+        console.log(text);
+        const width = text[1].value+"px";
+        const height = text[2].value+"px";
+        const color = document.querySelectorAll("input[type=color]")[1].value;
+
+        const box = document.getElementById("box");
+        box.style.width = width;
+        box.style.height = height;
+        box.style.backgroundColor = color;
+    }
+</script>
+
+<br><br><br>
+<hr>
+<br><br><br>
+
+수량: <input type="number" name="cnt"><br>
+가격: <input type="number"name="price"><br>
+<button id="calcBtn" onclick="sum()">계산하기</button><br>
+결제 가격: <span id="result">0원</span>
+
+<script>
+    const sum = () => {
+        const count = document.querySelector("input[name=cnt]").value;
+        const price = document.querySelector("input[name=price]").value;
+    
+        const total = count * price;
+        const result = document.getElementById("result");
+        result.innerHTML = `${total}원`;
+    }
+</script>
+
+<br><br><br>
+<hr>
+<br><br><br>
+
+
+</body>
+</html>

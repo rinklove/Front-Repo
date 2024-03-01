@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Layout3</title>
+</head>
+<body>
+    <h1>회원가입</h1>
+    <form action="">
+        <fieldset>
+            <legend>필수 입력 사항</legend>
+            <table>
+                <thead></thead>
+                <tbody>
+                    <tr>
+                        <th>ID</th>
+                        <td><input type="text" placeholder="아이디 10글자 이내"></td>
+                        <td><input type="button" value="중복확인"></td>
+                    </tr>
+                    <tr>
+                        <th>비밀번호</th>
+                        <td><input type="password" placeholder="영문, 숫자, 특수문자 포함 8자 이상"></td>
+                    </tr>
+                    <tr>
+                        <th>비밀번호 확인</th>
+                        <td><input type="password"></td>
+                    </tr>
+                    <tr>
+                        <th>비밀번호</th>
+                        <td><input type="email"></td>
+                        <td>
+                            <select name="" id="">
+                                <option value="">직접입력</option>
+                                <option value="naver.com">naver.com</option>
+                                <option value="gmail.com">gmail.com</option>
+                                <option value="um.net">daum.net</option>
+                            </select>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </fieldset>
+        <fieldset>
+            <legend>추가 정보</legend>
+            <span>프로필 사진:</span>
+            <input type="file">
+            <br><br>
+
+            <span>성별:</span>
+            <input type="radio" name="gender" id="m" value="m"><label for="m">남자</label>
+            <input type="radio" name="gender" id="w" value="w"><label for="w">여자</label>
+            <br><br>
+
+            <span>생년월일:</span>
+            <input type="date" value="연도-월-일">
+            <br><br>
+
+            <span>취미:</span><br>
+            <input type="checkbox" name="hobby" id="게임" value="게임"><label for="게임">게임</label>
+            <input type="checkbox" name="hobby" id="운동" value="운동"><label for="운동">운동</label>
+            <input type="checkbox" name="hobby" id="취침" value="취침"><label for="취침">취침</label><br>
+            <input type="checkbox" name="hobby" id="댄스" value="댄스"><label for="댄스">댄스</label>
+            <input type="checkbox" name="hobby" id="노래" value="노래"><label for="노래">노래</label>
+            <input type="checkbox" name="hobby" id="공부" value="공부" checked><label for="공부">공부</label><br>
+            <input type="checkbox" name="hobby" id="기타" value="기타"><label for="기타">기타</label>
+            <input type="text">
+            <br><br>
+
+            <span>자기소개</span><br>
+            <textarea name="" id="" cols="50" rows="5"></textarea>
+        </fieldset>
+        <br>
+        <input type="submit" value="회원가입">
+        <input type="reset" value="다시입력">
+        <input type="button" value="이전으로">
+    </form>
+</body>
+</html>

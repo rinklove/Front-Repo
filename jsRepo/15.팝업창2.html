@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>부모창 -> 자식창 값 보내기</h1>
+    <input type="text" name="nick" id="">
+    <button onclick="openPopup();">중복 검사</button>
+
+    <script>
+        const openPopup = () => {
+            const childWindow = window.open('/15.팝업창2_자식.html');
+            const input = document.querySelector("input[name=nick]");
+            
+            setTimeout( () => {
+                const childDiv = childWindow.document.querySelector("div");
+                childDiv.innerHTML = input.value;
+            }, 1000);
+        }   
+    </script>
+</body>
+</html>

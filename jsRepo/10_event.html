@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event</title>
+    <script defer src="./10.js"></script>
+    <style>
+        a{
+            text-decoration: none;
+        }
+        pre {
+            font-size: 150%;
+        }
+        button {
+            background-color: aquamarine;
+            border: none;
+            padding: 1%;
+        }
+    </style>
+</head>
+<body>
+    <h1>event</h1>
+    <pre>
+        1. 고전 이벤트 모델
+        2. 인라인 이벤트 모델
+        3. 표준 이벤트 모델
+
+        기본 이벤트 제거(return false)
+    </pre>
+    <button id="btn01">버튼01(고전)</button>
+    <button id="btn02" onclick="f2()">버튼02(인라인)</button>
+    <button id="btn03">버튼03(표준)</button>
+
+    <br><br><br>
+    <hr>
+    <br><br><br>
+    <a href="https://naver.com" onclick="return f04()">네이버이동</a>
+
+    <form action="signup" onsubmit="return f05();">
+       아이디: <input type="text" name="memberId"><br>
+       비밀번호: <input type="password" name="memberPwd"><br>
+       비밀번호 확인: <input type="password" name="memberPwd2"><br>
+       닉네임: <input type="text" name="memberNick" id=""><br>
+       <input type="submit" value="회원가입">
+    </form>
+</body>
+</html>

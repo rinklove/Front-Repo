@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <h1>오늘 할 일</h1>
+    
+    <input id="target" type="text" placeholder="할일을 입력하세요">
+    <button onclick="addTodo();">등록</button>
+
+    <br><br><br>
+
+    <div id="result">
+
+        <div>
+            <h3>할일이름</h3>
+            <button>삭제</button>
+        </div>
+        <hr>
+
+        
+
+
+
+    </div>
+
+
+    <script>
+
+        function addTodo(){
+            const todoListStr = localStorage.getItem("todoList");
+            const todoArr = JSON.parse(todoListStr);
+            
+            const target = document.querySelector("#target");
+            const todoObj = {
+                no : 1 ,
+                title : target.value ,
+                done : false ,
+            };
+            todoArr.push(todoObj);
+            localStorage.setItem("todoList" , JSON.stringify(todoArr) );
+            paintView();
+        }
+
+        function paintView(){
+
+            //데이터(문자열) 읽어와서 객체배열로 만들기
+            const todoListStr = localStorage.getItem("todoList");
+            const todoArr = JSON.parse(todoListStr);
+
+            for(let i = 0 ; i < todoArr.length; ++i){
+                const todoObj = todoArr[i];
+
+                const result = document.querySelector("#result");
+                const divTag = document.createElement("div");
+                const h3Tag = document.createElement("h3");
+                const btnTag = document.createElement("button");
+                const hrTag = document.createElement("hr");
+                h3Tag.innerHTML = todoObj.title;
+                divTag.appendChild(h3Tag);
+                btnTag.innerHTML = "완료";
+                divTag.appendChild(btnTag);
+                result.appendChild(divTag);
+                result.appendChild(hrTag);
+
+            }
+
+            
+        }
+
+    </script>
+
+
+</body>
+</html>

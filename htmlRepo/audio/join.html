@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.4.0.js"></script>
+</head>
+<body>
+    
+    아이디: <input type="text" name="id" id="id"><br>
+    비밀번호: <input type="password" name="pwd" id="pwd"><br>
+    닉네임: <input type="text" name="nick" id="nick"><br>
+    <input type="button" value="회원가입" id="join-btn">
+
+    <script>
+      $("#join-btn").click(function() {
+    const data = {
+        id: $('#id').val(),
+        pwd: $('#pwd').val(),
+        nick: $('#nick').val()
+    }
+
+    $.ajax({
+        type: "POST",
+        url: "/app/member",
+        dataType: 'json',
+        contentType: 'application/json', 
+        data: JSON.stringify(data),
+        success: async (res) => {
+            
+            if (!res.ok) {
+                throw new Error(res.msg);
+            } else {
+                alert(res.msg);
+                console.log(res.member);
+            }
+        },
+        error: (xhr) => {
+            
+            alert(xhr.responseJSON.msg); 
+        }
+    });
+});
+
+    </script>
+</body>
+</html>

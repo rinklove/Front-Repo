@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>팝업창</title>
+</head>
+<body>
+    <h1>팝업창</h1>
+
+    <input type="text" name="nick">
+    <button onclick="openWin();"`>닉네임 중복확인</button>
+    <br>
+    <div id="result">중복확인을 진행하세요</div>
+
+    <script>
+        const openWin = () => {
+            const childWindow = window.open("14.팝업창_자식.html");
+        }
+        </script>
+</body>
+</html>

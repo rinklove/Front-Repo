@@ -1,0 +1,72 @@
+body {
+    margin: 0%;
+}
+pre {
+    font-size: 150%10
+}
+
+.box {
+    border: 3px solid black;
+    width: 30vw;
+    height: 30vh;
+
+}
+
+#t01:hover {
+    transform: translateX(0%);
+    transform: rotate(360deg) translateX(40%);
+    border: 4px double blue;
+    background-color: lightcyan;
+    transition: 3000ms;
+    transition-timing-function: cubic-bezier(.39,-1.16,.39,2.3);
+}
+
+@keyframes kh {
+    0% {
+        background-color: red;
+        transform: rotate3d(1,1,1,0deg);
+    }
+    25% {
+        background-color: green;
+        transform: rotate3d(1,1,1,360deg);
+    }
+    50% {
+        background-color: blue;
+        transform: rotate3d(1,1,1,0deg);
+    }
+    
+    75% {
+        background-color: dimgray;
+        transform: rotate3d(1,1,1,-360deg);
+    }
+    100% {
+        background-color: lawngreen;
+        transform: rotate3d(1,1,1,0deg);
+    }
+}
+
+#t02:hover {
+    animation-name: kh;
+    /* 애니메이션 진행 정도  */
+    animation-timing-function: linear;
+    animation-duration: 4000ms;
+    /* 무한 반복 */
+    animation-iteration-count: 1;
+    /* 애니메이션 진행 방향? 
+    alternate: 왕복
+    reverse: 역순
+    alternate-reverse: 왕복 역순 */
+    animation-direction: normal;
+    /* 
+        none: 
+        forwards: 애니메이션 끝나고 마지막 상태(100%) 유지
+        backwards: 애니메이션 처음에, 처음 상태(0%) 가짐
+        both: forwards+backwards 
+     */
+    animation-fill-mode: both;
+    animation-play-state: running
+}
+
+#t02 {
+    animation-play-state: paused;
+}
